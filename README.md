@@ -25,3 +25,5 @@ The four supplied regression cases cover stride/dilation combinations (1,1), (1,
 - `constraints/interface.sdc` records the 3.4 ns target and I/O assumptions. Select the appropriate operating corner and library in your authorized synthesis environment.
 
 All four golden frames and protocol checks passed locally under Verilator 5.052. These runs establish functional behavior for the supplied cases only. The historical submission lists a 3.4 ns clock period; this is distinct from a new timing signoff.
+
+[Submission provenance and synthesis inventory](docs/provenance.md)
