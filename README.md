@@ -1,5 +1,7 @@
 # Streaming convolution engine
 
+[![Validation](https://github.com/ilochen/cvsd-convolution-engine/actions/workflows/rtl.yml/badge.svg)](https://github.com/ilochen/cvsd-convolution-engine/actions/workflows/rtl.yml)
+
 This NTU CVSD project accepts four unsigned image bytes per transfer, decodes convolution settings embedded in the pixels’ least significant bits, and writes up to four addressed output pixels in parallel. The 64 × 64 image is distributed across eight 512 × 8 banks. The control sequence loads the image, loads signed filter weights, executes convolution, then signals completion.
 
 ## Datapath
@@ -27,3 +29,11 @@ The four supplied regression cases cover stride/dilation combinations (1,1), (1,
 All four golden frames and protocol checks passed locally under Verilator 5.052. These runs establish functional behavior for the supplied cases only. The historical submission lists a 3.4 ns clock period; this is distinct from a new timing signoff.
 
 [Submission provenance and synthesis inventory](docs/provenance.md)
+
+[Interactive architecture](https://ilochen.github.io/projects/cvsd-convolution-engine/)
+
+## Validation snapshot
+
+All 10,240 golden output pixels matched across the four stride/dilation cases.
+
+Rechecked on 6 November 2026. Simulation results establish the covered functional behavior; physical implementation measurements are identified separately in the documentation.
